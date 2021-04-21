@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <title>Cronoanálise</title>
+</head>
+<body>
+    <div class="small-container">
+        <a href="index.html">Home</a>
+    </div>
+
+    <div class="small-container">
+        <h1>Estabilidade dos ciclos</h1>
+        <canvas id="chart" width="400" height="300"></canvas>
+    </div>
+
+    <div class="small-container">
+        <h1>Tempo normal e tempo padrão</h1>
+        <p>Ritmo</p>
+        <input type="number" id="ritmo" placeholder="Ritmo %" min="0">
+        <p>Tolerância</p>
+        <input type="number" id="tolerancia" placeholder="Tolerância %" min="0">
+    </div>
+
+    <div class="small-container">
+        <p id="tobservado">Tempo observado:</p>
+        <p id="tnormal">Tempo normal:</p>
+        <p id="tpadrao">Tempo padrão:</p>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

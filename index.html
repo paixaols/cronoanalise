@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/primitive.css" media="screen">
-    <title>Document</title>
+    <meta name="description" content="Ferramenta de cronoanálise flexível para a gestão de processos variados.">
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css">
+    <title>Cronoanálise</title>
 </head>
 <body>
+    <div id="menu" class="small-container">
+        <a href="dashboard.html">Análises</a>
+    </div>
+
     <div class="small-container">
         <h1>Cronoanálise</h1>
 
         <form>
-            <input id="item" type="text" placeholder="Novo item" required />
+            <input id="item" type="text" placeholder="Nova etapa" required />
         </form>
 
         <button id="button-add" class="round-button">Adicionar</button>
         <button id="button-clear" class="round-button">Limpar</button>
-        <button id="button-save" class="round-button">Salvar</button>
+        <button id="button-save" class="round-button">Exportar .csv</button>
 
-        <h2>Itens</h2>
+        <h2>Etapas</h2>
         <ul></ul>
     </div>
 
-    <script src="js/scripts.js"></script>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
