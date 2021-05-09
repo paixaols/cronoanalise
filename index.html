@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ferramenta de cronoanálise flexível para a gestão de processos variados.">
     <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Cronoanálise</title>
     <script data-ad-client="ca-pub-5120683851584099" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <div id="menu" class="small-container">
-        <a href="dashboard.html">Análises</a>
-    </div>
+    <header id="header">
+        <a href="dashboard.html">Análise</a>
+        <a href="#manual">Como usar</a>
+    </header>
 
-    <div class="small-container">
+    <section class="small-container">
         <h1>Cronoanálise</h1>
 
         <form>
@@ -26,8 +28,42 @@
         <button id="button-save" class="round-button">Exportar .csv</button>
 
         <h2>Etapas</h2>
-        <ul></ul>
-    </div>
+        <div id="entrada">
+            <ul></ul>
+        </div>
+    </section>
+
+    <section id="manual" class="small-container">
+        <h1>Como usar</h1>
+        <a href="#header">Topo</a>
+        <p>
+            Vamos usar o exemplo de um processo com três etapas. Ao iniciar cada etapa do processo entre com sua identificação da caixa de texto. Na lista <em>Etapas</em> será acrescentada data, hora e a descrição da etapa adicionada. Se o processo for repetido em ciclos basta adicionar a <em>etapa 1</em> de cada novo ciclo após a <em>etapa 3</em> do ciclo anterior. Ao terminar o último ciclo adicione a etapa <em>fim</em>.
+        </p>
+
+        <p>
+            Se o processo com três etapas for executado duas vezes, a lista <em>Etapas</em> vai parecer como vemos abaixo
+            <ul>
+                <li>31/12/1900 13:00:00. etapa 1</li>
+                <li>31/12/1900 13:05:00. etapa 2</li>
+                <li>31/12/1900 13:10:00. etapa 3</li>
+                <li>31/12/1900 13:20:00. etapa 1</li>
+                <li>31/12/1900 13:25:00. etapa 2</li>
+                <li>31/12/1900 13:30:00. etapa 3</li>
+                <li>31/12/1900 13:40:00. fim</li>
+            </ul>
+            Nesse exemplo, as etapas 1 e 2 foram executadas em 5 minutos cada, e a etapa 3 foi executada em 10 minutos. O processo completo foi executado em 20 minutos.
+        </p>
+
+        <p>
+            O botão <button class="round-button">Adicionar</button> adiciona uma nova etapa à lista <em>Etapas</em> com a descrição informada.
+        </p>
+        <p>
+                O botão <button class="round-button">Limpar</button> exclui todas as etapas já adicionadas na lista <em>Etapas</em>.
+        </p>
+        <p>
+                O botão <button class="round-button">Exportar .csv</button> permite salvar uma cópia da lista <em>Etapas</em> em um arquivo de extensão .csv.
+        </p>
+    </section>
 
     <script src="js/script.js"></script>
 </body>

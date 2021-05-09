@@ -5,32 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    
+    <!-- MathJax -->
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- Enable inline math mode -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
     <title>Cronoanálise</title>
 </head>
 <body>
-    <div class="small-container">
-        <a href="index.html">Home</a>
-    </div>
+    <header id="header">
+        <a href="index.html">Início</a>
+        <a href="#manual">Como usar</a>
+    </header>
 
-    <div class="small-container">
+    <section class="small-container">
         <h1>Estabilidade dos ciclos</h1>
         <canvas id="chart" width="400" height="300"></canvas>
-    </div>
+    </section>
 
-    <div class="small-container">
+    <section class="small-container">
         <h1>Tempo normal e tempo padrão</h1>
         <p>Ritmo</p>
         <input type="number" id="ritmo" placeholder="Ritmo %" min="0">
         <p>Tolerância</p>
         <input type="number" id="tolerancia" placeholder="Tolerância %" min="0">
-    </div>
-
-    <div class="small-container">
         <p id="tobservado">Tempo observado:</p>
         <p id="tnormal">Tempo normal:</p>
         <p id="tpadrao">Tempo padrão:</p>
-    </div>
+    </section>
+
+    <section id="manual" class="small-container">
+        <h1>Como usar</h1>
+        <a href="#header">Topo</a>
+        <p>
+            A <em>Estabilidade dos ciclos</em> exibe um gráfico com a duração de cada etapa do processo para todas as repetições dos ciclos. Permite ver se algum ciclo teve duração diferente dos demais.
+        </p>
+        <p>
+            Tempo observado ($T_O$): é o tempo médio do processo, repetido em vários ciclos.
+        </p>
+        <p>
+            Tempo normal ($T_N$): encontrado a partir do tempo observado, considerando o ritmo de quem executa o processo. É calculado com a fórmula
+            \begin{equation}
+            T_N=T_O\frac{R}{100}
+            \end{equation}
+        </p>
+        <p>
+            Tempo padrão ($T_P$): encontrado a partir do tempo normal, considerando a tolerância. É calculado com a fórmula
+            \begin{equation}
+            T_P=T_N\left(1+\frac{Tol}{100}\right)
+            \end{equation}
+        </p>
+    </section>
 
     <script src="js/dashboard.js"></script>
 </body>
