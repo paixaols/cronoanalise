@@ -1,0 +1,30 @@
+body{
+    background: lightblue;
+}
+
+header{
+    background: #547980;
+    height: 50px;
+    text-align: center;
+    font-size: large;
+    color: white;
+    padding: 10px;
+}
+
+header>a{
+    color: white;
+    padding: 10px;
+}
+
+header>a:hover{
+    color: white;
+}
+
+.small-container{
+    background: aliceblue;
+}
+
+div#entrada{
+    height: 200px;
+    overflow-y: scroll;
+}
