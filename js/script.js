@@ -44,15 +44,16 @@ buttonAdd.addEventListener('click', function () {
 })
 
 buttonClear.addEventListener('click', function () {
-    localStorage.clear()
-    while (ul.firstChild) {
-        ul.removeChild(ul.firstChild)
+    if (confirm('Todos os dados serão apagados!')) {
+        localStorage.clear()
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild)
+        }
+        itemsArray.length = 0
     }
-    itemsArray.length = 0
 })
 
 buttonSave.addEventListener('click', function () {
-    // let csvContent = "data:text/csv;charset=utf-8," + itemsArray.map(e => e.join(",")).join("\n")
     let csvContent = "data:text/csv;charset=utf-8," + itemsArray.map(e => e[0].split(' ').join(",")+','+e[1]).join("\n")
     var encodedUri = encodeURI(csvContent)
     var link = document.createElement("a")
