@@ -1,10 +1,10 @@
 function parseDate(dateString){
-    let dia = dateString.split(' ')[0].split('/')[0]
-    let mes = dateString.split(' ')[0].split('/')[1]
-    let ano = dateString.split(' ')[0].split('/')[2]
-    let hora = dateString.split(' ')[1].split(':')[0]
-    let min = dateString.split(' ')[1].split(':')[1]
-    let seg = dateString.split(' ')[1].split(':')[2]
+    let dia = dateString.split(', ')[0].split('/')[0]
+    let mes = dateString.split(', ')[0].split('/')[1]
+    let ano = dateString.split(', ')[0].split('/')[2]
+    let hora = dateString.split(', ')[1].split(':')[0]
+    let min = dateString.split(', ')[1].split(':')[1]
+    let seg = dateString.split(', ')[1].split(':')[2]
     return new Date(ano, mes-1, dia, hora, min, seg)
 }
 
