@@ -54,10 +54,11 @@ buttonClear.addEventListener('click', function () {
 })
 
 buttonSave.addEventListener('click', function () {
-    let csvContent = "data:text/csv;charset=utf-8," + itemsArray.map(e => e[0].split(' ').join(",")+','+e[1]).join("\n")
-    var encodedUri = encodeURI(csvContent)
+    let csvContent = itemsArray.map(e => e[0].split(', ').join(",")+','+e[1]).join("\n")
+    var universalBOM = "\uFEFF"
+    var encodedContent = encodeURI(universalBOM + csvContent)
     var link = document.createElement("a")
-    link.setAttribute("href", encodedUri)
+    link.setAttribute("href", "data:text/csv;charset=utf-8," + encodedContent)
     link.setAttribute("download", "download.csv")
     document.body.appendChild(link)// Required for FF
     link.click()
